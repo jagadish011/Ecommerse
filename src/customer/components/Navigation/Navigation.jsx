@@ -3,6 +3,7 @@ import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import { Bars3Icon, MagnifyingGlassIcon, ShoppingBagIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import { navigation } from './navigationData'
 import elogo from '../../../assets/salt-removebg-preview.png'
+import { useNavigate } from 'react-router-dom'
 
 
 
@@ -12,6 +13,7 @@ function classNames(...classes) {
 
 export default function Navigation() {
   const [open, setOpen] = useState(false)
+  const navigate = useNavigate();
 
   return (
     <div className="bg-white z-50">

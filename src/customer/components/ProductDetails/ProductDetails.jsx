@@ -8,6 +8,7 @@ import { Box, Grid, LinearProgress } from "@mui/material";
 import ProductReviewCard from "./ProductReviewCard";
 import HomeSectionCard from "../Home_card/HomeSectionCard";
 import { men_kurta } from "../../../Data/men_kurta";
+import { useNavigate } from "react-router-dom";
 const product = {
   name: "Basic Tee 6-Pack",
   price: "$192",
@@ -66,6 +67,10 @@ function classNames(...classes) {
 export default function ProductDetails() {
   const [selectedColor, setSelectedColor] = useState(product.colors[0]);
   const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
+const navigate = useNavigate();
+  const handleAddToCart = () => {
+    navigate("/cart");
+  };
 
   return (
     <div className="bg-white lg:px-20">
@@ -282,6 +287,7 @@ export default function ProductDetails() {
                 </div>
 
                 <Button
+                onClick={handleAddToCart}
                   variant="contained"
                   sx={{ mt: 3, px: 5, py: 2, bgcolor: "#9155fd" }}
                 >
